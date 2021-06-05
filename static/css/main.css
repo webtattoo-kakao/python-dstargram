@@ -1,10 +1,21 @@
 
 
-.list-photo {
-    border: solid 10px red;
-text-align: center;
+.register p {
+}
+.register p label {
+    width: 150px;
 }
 
-.list-photo img {
-    width: 70%;
+.register p input[type=text]
+, .register p input[type=email]
+, .register p input[type=password] {
+    width: 250px;
+}
+
+
+.photo-list a {
+    text-decoration: none;
+}
+.photo-list a:hover {
+    text-decoration: underline;
 }

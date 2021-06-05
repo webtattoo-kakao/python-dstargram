@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    - 회원가입 완료
+{% endblock %}
+
+{% block contents %}
+
+<div class="row g-3">
+
+    <div class="alert alert-success" role="alert">
+        {{new_user.username}}님, 회원 가입을 완료하였습니다.
+    </div>
+
+    <div>
+        <a href="{% url 'accounts:login' %}" class="btn btn-success">로그인 하기</a>
+    </div>
+
+
+</div>
+
+{% endblock %}

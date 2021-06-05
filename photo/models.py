@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from django.contrib.auth.models import User
 
@@ -18,3 +19,9 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.author.first_name + ',' + self.author.last_name + " - " + self.created.strftime('%Y-%m-%d %H:%M:%S')
+
+
+    def get_absolute_url(self):
+        return reverse('photo:photo_detail', args=[self.id])
+
+    

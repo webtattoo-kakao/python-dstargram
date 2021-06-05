@@ -9,23 +9,14 @@
 
     <div class="row g-3">
 
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+        <div class="alert alert-success" role="alert">
+            로그 아웃이 정상적으로 되었습니다.
+        </div>
 
-            <div class="mb-3">
-                <label for="id_username" class="form-label">Username:</label>
-                <input type="text" name="username" class="form-control" id="id_username" autofocus autocapitalize="none"
-                       autocomplete="username" maxlength="150" required placeholder="이름을 입력해 주세요.">
-            </div>
+        <div>
+            <a href="{% url 'accounts:login' %}" class="btn btn-success">다시 로그인 하기</a>
+        </div>
 
-            <div class="mb-3">
-                <label for="id_password" class="form-label">Password:</label>
-                <input type="password" name="password" autocomplete="current-password" required id="id_password"
-                       class="form-control" placeholder="비밀번호를 입력해 주세요.">
-            </div>
-
-            <button type="submit" class="btn btn-primary"> 로그인</button>
-        </form>
 
     </div>
 

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    -  목록
+{% endblock %}
+
+{% block contents %}
+
+    <div class="photo-detail">
+
+      <!--
+//로그인을 했고
+//포토 올린 사용자와 현재 로그인한 사용자가 같아야 버튼을 표시함.
+      -->
+
+        <div class="card mb-3">
+            <img src="{{object.photo.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{object.author.username}} ({{object.author.first_name}} {{object.author.last_name}})</h5>
+              <p class="card-text">{{object.text}}</p>
+              <p class="card-text"><small class="text-muted">{{object.created}}</small></p>
+            </div>
+          </div>
+
+          <div>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+
+              {% if user.is_authenticated and user.get_username == object.author.get_username %}
+                <a href="{% url 'photo:photo_delete' pk=object.id %}" class="btn btn-danger">삭제</a>
+                <a href="{% url 'photo:photo_update' pk=object.id %}" class="btn btn-warning">수정</a>
+              {% endif %}
+                <a href="{% url 'photo:photo_list' %}" class="btn btn-success">목록</a>
+                
+              </div>
+          </div>
+
+    </div>
+
+{% endblock %}

@@ -23,6 +23,12 @@
             integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
             crossorigin="anonymous" async></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+            crossorigin="anonymous"></script>
+
+    {% block head_script %}
+    {% endblock %}
 </head>
 <body>
 
@@ -50,8 +56,9 @@
             </ul>
         {% else %}
             <ul class="nav">
+                
                 <li class="nav-item"><a href="{% url 'accounts:login' %}" class="nav-link link-dark px-2">로그인</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">회원 가입</a></li>
+                <li class="nav-item"><a href="{% url 'accounts:register' %}" class="nav-link link-dark px-2">회원 가입</a></li>
             </ul>
         {% endif %}
 

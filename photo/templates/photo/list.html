@@ -7,7 +7,7 @@
 
 {% block contents %}
 
-    <div>
+    <div class="photo-list">
 
         <div class="row row-cols-1 row-cols-md-3 g-4" data-masonry='{"percentPosition": true }'>
 
@@ -18,8 +18,14 @@
                         <img src="{{ photo_data.photo.url }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ photo_data.author.username }}
-                                ({{ photo_data.author.first_name }} {{ photo_data.author.last_name }})</h5>
-                            <p class="card-text">{{ photo_data.text }}</p>
+                                {% if photo_data.author.first_name or photo_data.author.last_name %}
+                                    ({{ photo_data.author.first_name }} {{ photo_data.author.last_name }})
+                                {% endif %}
+                            </h5>
+                            
+                            <a href="{% url 'photo:photo_detail' pk=photo_data.id %}">
+                                <p class="card-text">{{ photo_data.text }}</p>
+                            </a>
                             <p class="card-text"><small class="text-muted">{{ photo_data.created }}</small></p>
                         </div>
                     </div>

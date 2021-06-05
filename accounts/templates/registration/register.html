@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    - 회원가입
+{% endblock %}
+
+{% block contents %}
+
+    <div class="row g-3 register">
+
+        <h3>회원 가입</h3>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary"> 회원가입</button>
+        </form>
+
+
+        <!--
+        <form action="" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="CyVZvld0x7NvmTryvqqboCU5v9Z8LTbBts3MKHPAMVC4MGQLC0CQEdMjppz6Egr5">
+            <ul class="errorlist"><li>A user with that username already exists.</li></ul>
+            <p><label for="id_username">Username:</label> <input type="text" name="username" value="aaaaa" maxlength="150" required id="id_username"> <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span></p>
+            <p><label for="id_first_name">First name:</label> <input type="text" name="first_name" value="aaaaa" maxlength="150" id="id_first_name"></p>
+            <p><label for="id_last_name">Last name:</label> <input type="text" name="last_name" value="aaaaa" maxlength="150" id="id_last_name"></p>
+            <p><label for="id_email">Email address:</label> <input type="email" name="email" value="aaaaa@naver.com" maxlength="254" id="id_email"></p>
+            <p><label for="id_password">Password:</label> <input type="password" name="password" required id="id_password"></p>
+            <p><label for="id_re_password">Repeat Password:</label> <input type="password" name="re_password" required id="id_re_password"></p>
+
+            <button type="submit" class="btn btn-primary"> 회원가입</button>
+        </form>
+        -->
+
+
+
+
+    </div>
+
+{% endblock %}
