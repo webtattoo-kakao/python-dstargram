@@ -41,10 +41,21 @@
             <li class="nav-item"><a href="/" class="nav-link link-dark px-2 active" aria-current="page">홈</a></li>
             <li class="nav-item"><a href="/upload" class="nav-link link-dark px-2">업로드</a></li>
         </ul>
-        <ul class="nav">
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">로그인</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">회원 가입</a></li>
-        </ul>
+
+        {% if user.is_authenticated %}
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">{{ user.get_username }} 님</a></li>
+                <li class="nav-item"><a href="{% url 'accounts:logout' %}" class="nav-link link-dark px-2">로그아웃</a></li>
+
+            </ul>
+        {% else %}
+            <ul class="nav">
+                <li class="nav-item"><a href="{% url 'accounts:login' %}" class="nav-link link-dark px-2">로그인</a></li>
+                <li class="nav-item"><a href="#" class="nav-link link-dark px-2">회원 가입</a></li>
+            </ul>
+        {% endif %}
+
+
     </div>
 </nav>
 <header class="py-3 mb-4 border-bottom">
