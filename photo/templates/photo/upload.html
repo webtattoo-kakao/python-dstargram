@@ -7,6 +7,24 @@
 
 {% block contents %}
 
+    <div class="row g-3">
 
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="id_photo">사진</label>
+                <input type="file" name="photo" accept="image/*" class="form-control" id="id_photo">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">내용</span>
+                <textarea name="text" class="form-control" aria-label="With textarea" cols="40" rows="10" required id="id_text"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">업로드</button>
+        </form>
+
+    </div>
 
 {% endblock %}
