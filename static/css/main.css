@@ -1,0 +1,10 @@
+
+
+.list-photo {
+    border: solid 10px red;
+text-align: center;
+}
+
+.list-photo img {
+    width: 70%;
+}
